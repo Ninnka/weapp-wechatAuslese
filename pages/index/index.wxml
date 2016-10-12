@@ -1,0 +1,35 @@
+<!--index.wxml-->
+<view class="root">
+  <scroll-view scroll-y="true" scroll-x="false" style="height:1300px" bindscrolltoupper="scrolltoupper" bindscrolltolower="scrolltolower" bindscroll="scrolling" >
+    <navigator class="auslese_container" wx:for="{{contentList}}">
+      <view class="auslese_item_header">
+        <image src="{{item.userLogo}}" class="header_userlogo"></image>
+        <view class="header_username_publishtime">
+          <view class="username">{{item.typeName}}</view>
+          <view class="publishtime">{{item.date}}</view>
+        </view>
+      </view>
+      <view class="auslese_item_content">
+        <view class="content_image_wrapper">
+          <image src="{{item.contentImg}}" class="content_image"></image>
+        </view>
+        <view class="content_title_wrapper">
+          <text class="content_title">{{item.title}}</text>
+        </view>
+      </view>
+      <view class="auslese_item_footer">
+        <view class="footer_read">
+          <!--<image class="read_logo"></image>-->
+          <text class="read">已读：</text>
+          <text class="read_num">{{item.read_num}}</text>
+        </view>
+        <view class="footer_like">
+          <!--<image class="like_logo"></image>-->
+          <text class="like">喜欢：</text>
+          <text class="like_num">{{item.like_num}}</text>
+        </view>
+      </view>
+    </navigator>
+  </scroll-view>
+  <button class="backtoTop">TOP</button>
+</view>
